@@ -18,6 +18,14 @@ class BlubsController < ApplicationController
     end
   end
 
+  def destroy
+    @blub = Blub.find(params[:id])
+    if @blub.destroy
+      flash[:alert] = "Blub has popped."
+    end
+    redirect_to users_path
+  end
+
   private
     def blub_params
       params.require(:blub).permit(:content)

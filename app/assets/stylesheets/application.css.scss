@@ -22,7 +22,19 @@ a {
   text-decoration: none;
 }
 
+a:active {
+  color: red;
+}
+a:visited {
+  color: red;
+}
+
 
 body {
   font: 100% $font-stack;
+  background-image: url("whale.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

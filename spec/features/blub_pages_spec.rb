@@ -17,4 +17,11 @@ describe 'the blubs' do
     click_on 'Blub Away!'
     expect(page).to have_content 'all gone wrong'
   end
+
+  it 'destroys a blub' do
+    blub1 = FactoryGirl.create(:blub)
+    sign_in(blub1.user)
+    click_on "Harpoon"
+    expect(page).to have_content 'popped'
+  end
 end
