@@ -1,1 +1,8 @@
 <%= render 'layouts/header', title: "The Place to Blub" %>
+
+<%= link_to 'Blub a New Blub', new_blub_path, id: "new_blub_link", remote: true %>
+
+<h2>All Blubs</h2>
+<div id="blubs_feed">
+  <%= render @blubs.reverse %>
+</div>

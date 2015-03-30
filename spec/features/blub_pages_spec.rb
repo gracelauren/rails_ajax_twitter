@@ -9,4 +9,12 @@ describe 'the blubs' do
     click_on 'Blub Away!'
     expect(page).to have_content 'blub has floated'
   end
+
+  it 'throws an error if content is not filled in' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+    click_on 'Blub a New Blub'
+    click_on 'Blub Away!'
+    expect(page).to have_content 'all gone wrong'
+  end
 end

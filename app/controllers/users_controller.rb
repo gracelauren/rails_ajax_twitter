@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @blubs = Blub.all
   end
 
   def show
