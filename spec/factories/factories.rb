@@ -5,4 +5,9 @@ FactoryGirl.define do
     password("p4ssw0rd")
     password_confirmation("p4ssw0rd")
   end
+
+  factory :blub do
+    content("Look at me!")
+    user
+  end
 end
