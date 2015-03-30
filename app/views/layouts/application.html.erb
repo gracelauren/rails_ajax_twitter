@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div data-alert class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert"><%= msg %></div>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </div>
+
+</body>
+</html>
