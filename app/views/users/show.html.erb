@@ -2,8 +2,11 @@
 
 <%= link_to 'Blub a New Blub', new_blub_path, id: "new_blub_link", remote: true %>
 
-
-<h2>Your Blubs</h2>
-<div id="blubs_feed">
-  <%= render @blubs.reverse %>
-</div>
+<% if @blubs.any? %>
+  <h2>Your Blubs</h2>
+  <div id="blubs_feed">
+    <%= render @blubs.reverse %>
+  </div>
+<% else %>
+  <p>You've got no blubs! How will anyone know you even exist!?</p>
+<% end %>
