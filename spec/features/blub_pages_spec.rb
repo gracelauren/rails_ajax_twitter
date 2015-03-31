@@ -15,7 +15,7 @@ describe 'the blubs' do
     sign_in(user)
     click_on 'Blub a New Blub'
     click_on 'Blub Away!'
-    expect(page).to have_content 'all gone wrong'
+    expect(page).to have_content 'be blank'
   end
 
   it 'destroys a blub' do
@@ -23,5 +23,16 @@ describe 'the blubs' do
     sign_in(blub1.user)
     click_on "Harpoon"
     expect(page).to have_content 'popped'
+  end
+
+  it'fetches new blubs when scrolling down the page', js: true do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+    30.times {|n| FactoryGirl.create(:blub, content: (n+1)) }
+    visit root_path
+    page.should have_content('1')
+    page.should_not have_content('26')
+    page.evaluate_script("window.scrollTo(0, document.height)")
+    page.should_not have_content('26')
   end
 end

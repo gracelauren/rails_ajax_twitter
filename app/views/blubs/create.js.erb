@@ -1,3 +1,6 @@
 $('#new_blub').remove();
 $('#new_blub_link').show();
+$('#flash').fadeIn(1000);
+$('#flash').html('<%= j flash[:notice] %>');
 $('#blubs_feed').prepend('<%= j render(@blub) %>');
+$('#flash').fadeOut("slow");
