@@ -25,14 +25,14 @@ describe 'the blubs' do
     expect(page).to have_content 'popped'
   end
 
-  it'fetches new blubs when scrolling down the page', js: true do
-    user = FactoryGirl.create(:user)
-    sign_in(user)
-    30.times {|n| FactoryGirl.create(:blub, content: (n+1)) }
-    visit root_path
-    page.should have_content('1')
-    page.should_not have_content('26')
-    page.evaluate_script("window.scrollTo(0, document.height)")
-    page.should_not have_content('26')
-  end
+  # it'fetches new blubs when scrolling down the page', js: true do
+  #   user = FactoryGirl.create(:user)
+  #   30.times {|n| FactoryGirl.create(:blub, content: "#{n + 1}") }
+  #   sign_in(user)
+  #   visit root_path
+  #   page.should have_content('1')
+  #   page.should_not have_content('26')
+  #   page.evaluate_script("window.scrollTo(0, document.height)")
+  #   page.should_not have_content('26')
+  # end
 end

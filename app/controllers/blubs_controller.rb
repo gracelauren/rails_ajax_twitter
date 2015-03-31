@@ -1,5 +1,5 @@
 class BlubsController < ApplicationController
-
+  
   def new
     @blub = Blub.new
   end
