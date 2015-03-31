@@ -9,6 +9,8 @@ gem 'devise'
 gem 'factory_girl_rails'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+# gem 'kaminari'
+gem 'will_paginate'
 
 
 
