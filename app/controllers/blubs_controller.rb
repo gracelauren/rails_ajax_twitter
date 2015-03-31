@@ -7,14 +7,12 @@ class BlubsController < ApplicationController
   def create
     @blub = current_user.blubs.new(blub_params)
     if @blub.save
-      flash[:notice] = "Your blub has floated the surface!"
       respond_to do |format|
-        format.html { redirect_to users_path }
+        format.html { redirect_to users_path, :notice => 'Your blub has floated the surface!' }
         format.js
       end
     else
-      flash[:alert] = "Oh no! It's all gone wrong."
-      render :new
+    render :new
     end
   end
 

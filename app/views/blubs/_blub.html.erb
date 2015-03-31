@@ -1,7 +1,7 @@
 <div>
   <%= blub.content %> at: <%= blub.created_at %>
-  <% if current_user.id == blub.user_id %>
-    <%= link_to "Harpoon", blub_path(@blub),
+  <% if current_user && current_user.id == blub.user_id %>
+    <%= link_to "Harpoon", blub_path(blub),
                                     :data => { :confirm => "Are you sure?",
                                       :method => 'delete' } %>
   <% end %>

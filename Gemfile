@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'factory_girl_rails'
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass'
 gem 'bootstrap_form'
 
 
